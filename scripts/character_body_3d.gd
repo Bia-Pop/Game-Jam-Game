@@ -15,8 +15,8 @@ var t_bob : float = 0.0
 
 func _ready():
 	#Input.set_custom_mouse_cursor() - for custom cursor!
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
