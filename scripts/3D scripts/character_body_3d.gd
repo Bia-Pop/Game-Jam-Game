@@ -11,6 +11,8 @@ var gravity = 9.8
 @export var bob_amp : float = 0.03
 var t_bob : float = 0.0
 
+@export var seetext : Label
+@onready var seecast := %SeeCast
 
 func _ready():
 	#Input.set_custom_mouse_cursor() - for custom cursor!
@@ -26,9 +28,18 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	if seecast.is_colliding():
+		var target = seecast.get_collider()
+		print(target)
+		if target != null and target.has_method("interact"): # OR MAKE A GROUP!
+			seetext.show()
+			print("can see tutorial message!")
+			if Input.is_action_just_pressed("interact"):
+				print("DO STUFF!")
+	
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	
 	
 	var input_dir = Input.get_vector("3D_left","3D_right", "3D_up", "3D_down")
 	var direction = (head.transform.basis * Vector3(

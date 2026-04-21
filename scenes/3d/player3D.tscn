@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm0ycc5x5wtod"]
 
-[ext_resource type="Script" uid="uid://beaw8rgrydwhu" path="res://scripts/3D scripts/character_body_3d.gd" id="1_pcgwn"]
+[ext_resource type="Script" uid="uid://beaw8rgrydwhu" path="res://Scripts/3D scripts/character_body_3d.gd" id="1_pcgwn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fep6r"]
 
@@ -9,10 +9,11 @@ points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_w1mmj"]
 
-[node name="Player" type="CharacterBody3D" unique_id=2036735905 node_paths=PackedStringArray("camera", "head")]
+[node name="Player" type="CharacterBody3D" unique_id=2036735905 node_paths=PackedStringArray("camera", "head", "seetext")]
 script = ExtResource("1_pcgwn")
 camera = NodePath("head/Camera3D")
 head = NodePath("head")
+seetext = NodePath("CanvasLayer/BoxContainer/Label")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=925054175]
 mesh = SubResource("CapsuleMesh_fep6r")
@@ -26,3 +27,29 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=1055196709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8701415, -0.2359147)
 attributes = SubResource("CameraAttributesPractical_w1mmj")
+
+[node name="SeeCast" type="RayCast3D" parent="head/Camera3D" unique_id=1389235313]
+unique_name_in_owner = true
+transform = Transform3D(1.9106853e-15, -1.769138e-07, -0.9999998, -0.99999994, -1.7691382e-07, 0, -4.3711385e-08, 4.0473166, -4.3711374e-08, 2.8712254e-08, 0.004252732, 0.8927745)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=331923488]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=166535007]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.0
+offset_top = -203.0
+offset_right = 290.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/BoxContainer" unique_id=1813161343]
+visible = false
+layout_mode = 2
+text = "Click to Interact"
