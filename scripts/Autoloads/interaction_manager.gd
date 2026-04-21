@@ -13,7 +13,7 @@ func unregister_area(area: InteractArea):
 
 func _input(event: InputEvent) -> void:
 	#we have to implement the mouse functionality as an action
-	if event.is_action_released("interact"):
+	if event.is_action_pressed("interact"):
 		if active_areas.size()>0:
 			await get_tree().process_frame
 			await active_areas[0].interact.call()

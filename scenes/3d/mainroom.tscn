@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bsr0rf2vhggfr"]
 
-[ext_resource type="Script" uid="uid://b52n10npscye6" path="res://scenes/3d/mainroom.gd" id="1_j7t7n"]
+[ext_resource type="Script" uid="uid://b52n10npscye6" path="res://scripts/3D scripts/mainroom.gd" id="1_j7t7n"]
 [ext_resource type="PackedScene" uid="uid://dm0ycc5x5wtod" path="res://scenes/3d/player3D.tscn" id="1_w1mmj"]
+[ext_resource type="Script" uid="uid://f0vsfhyi55lw" path="res://scripts/3D scripts/3d_mirror.gd" id="3_ujn77"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,10 +20,14 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1mmj"]
 albedo_color = Color(7.123351e-06, 0.86968774, 0.50454617, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_j7t7n"]
+size = Vector3(0.8643799, 1.7624512, 1.050293)
+
 [node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player")]
 script = ExtResource("1_j7t7n")
 spawnpos = NodePath("MirrorSpawnPos")
 player = NodePath("Player")
+scene_2D_path = "res://Rooms/Room2.tscn"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1343459481]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -76,3 +81,14 @@ transform = Transform3D(2.2015772, 0, 0, 0, 1.0075973, 0, 0, 0, 2.633994, -6.700
 use_collision = true
 radius = 0.234375
 height = 3.588379
+
+[node name="3DMirror" type="Area3D" parent="." unique_id=888470030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5669026, 1.2187306, 3.549349)
+script = ExtResource("3_ujn77")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DMirror" unique_id=458371344]
+transform = Transform3D(1.3550004, 0, 0, 0, 1.3550004, 0, 0, 0, 1.3550004, -0.29120684, 0.5165608, -0.03407359)
+shape = SubResource("BoxShape3D_j7t7n")
+debug_color = Color(0, 0, 0, 0.42)
+
+[connection signal="body_entered" from="3DMirror" to="." method="_on_d_mirror_body_entered"]
