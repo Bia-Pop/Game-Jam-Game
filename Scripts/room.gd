@@ -12,6 +12,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	InventoryManager.add_item(InventoryManager.KEY)
 	#pt tranzitia de la 3d, ca mouse-ul sa se vada din nou in 2d
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if room_ui.has_left_arrow:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c62mcfe50lkhn"]
 
-[ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://scripts/room.gd" id="1_fja4u"]
+[ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_fja4u"]
 [ext_resource type="PackedScene" uid="uid://djvpqjfwmselq" path="res://UI/RoomUI.tscn" id="2_p8p37"]
 [ext_resource type="Texture2D" uid="uid://bieyi4siu2ufr" path="res://Sprites/Placeholders/Rooms/Room1.png" id="2_t1wpb"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_477ix"]
