@@ -13,6 +13,7 @@ var t_bob : float = 0.0
 
 @export var seetext : Label
 @onready var seecast := %SeeCast
+signal clicked
 
 func _ready():
 	#Input.set_custom_mouse_cursor() - for custom cursor!
@@ -30,11 +31,12 @@ func _physics_process(delta: float) -> void:
 	
 	if seecast.is_colliding():
 		var target = seecast.get_collider()
-		print(target)
-		if target != null and target.has_method("interact"): # OR MAKE A GROUP!
+		#print(target)
+		if target != null and target.is_in_group("Interactables"): # OR MAKE A GROUP!
 			seetext.show()
-			print("can see tutorial message!")
+			#print("can see tutorial message!")
 			if Input.is_action_just_pressed("interact"):
+				clicked.emit(target)
 				print("DO STUFF!")
 	
 	

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bwg407mxqbuw"]
+
+[ext_resource type="Script" uid="uid://f0vsfhyi55lw" path="res://Scripts/3D scripts/3d_mirror.gd" id="1_lmxt6"]
+
+[node name="InteractableArea3D" type="Area3D" unique_id=563925380]
+script = ExtResource("1_lmxt6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

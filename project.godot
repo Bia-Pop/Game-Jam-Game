@@ -27,6 +27,10 @@ SignalBus="*uid://b8mxpa7hagck5"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[global_group]
+
+Interactables="Interactable meshes"
+
 [input]
 
 ui_left={
