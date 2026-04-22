@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bwg407mxqbuw" path="res://scenes/3d/interactable_area_3d.tscn" id="3_rfp5g"]
 [ext_resource type="Script" uid="uid://3hq0fuvsjl70" path="res://scenes/3d/InteractableObject.gd" id="4_fep6r"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_rfp5g"]
+[ext_resource type="PackedScene" uid="uid://b6k8kxr7125rj" path="res://3D assets/Illusion.blend" id="6_5k5vb"]
+[ext_resource type="PackedScene" uid="uid://mrqt5s35qy47" path="res://3D assets/OGLINDA.tscn" id="6_nq88r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +19,7 @@ sky_material = SubResource("ProceduralSkyMaterial_j7t7n")
 background_mode = 2
 sky = SubResource("Sky_ujn77")
 tonemap_mode = 4
+tonemap_exposure = 0.24
 glow_enabled = true
 fog_sun_scatter = 0.27
 fog_density = 0.0469
@@ -37,7 +40,10 @@ albedo_color = Color(7.123351e-06, 0.86968774, 0.50454617, 1)
 radius = 0.37676045
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rfp5g"]
-size = Vector3(1, 2.9854736, 2.3740234)
+size = Vector3(1.6264648, 2.9854736, 2.3740234)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5k5vb"]
+size = Vector3(27.173248, 1, 29.495453)
 
 [node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror")]
 script = ExtResource("1_j7t7n")
@@ -55,14 +61,14 @@ environment = SubResource("Environment_rfp5g")
 camera_attributes = SubResource("CameraAttributesPractical_ujn77")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1914248222]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6053123, 2.1359434, 3.5930464)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.505795, 2.9790497, 3.5930464)
 light_energy = 1.988
 light_volumetric_fog_energy = 10.383
 light_size = 0.485
 omni_range = 1.6018165
 
 [node name="Player" parent="." unique_id=2036735905 instance=ExtResource("1_w1mmj")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.2060118, 1.4667473, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3365428, 2.4347084, 0.49960184)
 
 [node name="MirrorSpawnPos" type="Marker3D" parent="." unique_id=1941016669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.596, 1.567, 3.542)
@@ -72,32 +78,38 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1243244475]
 transform = Transform3D(26.063381, 0, 0, 0, 0.8423052, 0, 0, 0, 76.81152, 0.4235766, 0.30867854, 0.0009952188)
+visible = false
 use_collision = true
 size = Vector3(3.2752686, 0.9609375, 1)
 material = SubResource("StandardMaterial3D_w1mmj")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=321954747]
-transform = Transform3D(1, 0, 0, 0, 1.938775, 0, 0, 0, 23.043703, -8.502685, 6.4044485, 0.05818057)
+transform = Transform3D(1, 0, 0, 0, 1.938775, 0, 0, 0, 23.043703, -8.502685, 6.4044485, -2.3933072)
+visible = false
 use_collision = true
-size = Vector3(1, 6.091034, 1)
+size = Vector3(1, 6.091, 0.787)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1698302475]
-transform = Transform3D(-4.371139e-08, 0, -23.043703, 0, 1.938775, 0, 1, 0, -1.0072722e-06, 4.1699176, 6.262113, -10.8038025)
+transform = Transform3D(-4.371139e-08, 0, -23.043703, 0, 1.938775, 0, 1, 0, -1.0072722e-06, 4.1699176, 6.262113, -9.251823)
+visible = false
 use_collision = true
 size = Vector3(1, 6.2102966, 1.3125)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2092547142]
 transform = Transform3D(-4.371139e-08, 0, -23.043703, 0, 1.938775, 0, 1, 0, -1.0072722e-06, 4.0199084, 6.1328545, 6.855977)
+visible = false
 use_collision = true
 size = Vector3(1, 6.3263855, 1.3325195)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1302048636]
-transform = Transform3D(-4.371139e-08, 0, -23.043703, -1, -8.4746546e-08, 1.0072722e-06, -4.371139e-08, 1.938775, 4.4029267e-14, 4.0199084, 12.279404, -1.9213133)
+transform = Transform3D(-4.371139e-08, 0, -23.043703, -1, -8.4746546e-08, 1.0072722e-06, -4.371139e-08, 1.938775, 4.4029267e-14, 4.0199084, 9.558272, 0.051919818)
+visible = false
 use_collision = true
-size = Vector3(1, 9.8, 1.3325195)
+size = Vector3(1, 11.8355465, 1.3325195)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=508186783]
 transform = Transform3D(1, 0, 0, 0, 1.938775, 0, 0, 0, 23.209757, 10.022087, 6.5140944, -0.12966084)
+visible = false
 use_collision = true
 size = Vector3(1, 5.9324646, 1)
 
@@ -107,7 +119,7 @@ operation = 2
 use_collision = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=177353906]
-transform = Transform3D(2.2015772, 0, 0, 0, 1.0075973, 0, 0, 0, 2.633994, -6.7000003, 2.5, 0.10406399)
+transform = Transform3D(2.2015772, 0, 0, 0, 1.0075973, 0, 0, 0, 2.633994, -7.302683, 2.5, -0.48047614)
 use_collision = true
 radius = 0.234375
 height = 3.588379
@@ -119,16 +131,18 @@ size = Vector3(1, 0.42626953, 2.6323242)
 [node name="InventoryUI" parent="." unique_id=629547533 instance=ExtResource("4_rfp5g")]
 
 [node name="mirror" type="Node3D" parent="." unique_id=1773823899 node_paths=PackedStringArray("area", "object")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0502232, 0, 0)
 script = ExtResource("4_fep6r")
 area = NodePath("testbody/InteractableArea3D")
 object = NodePath("testbody")
 metadata/_custom_type_script = "uid://3hq0fuvsjl70"
 
 [node name="testbody" type="StaticBody3D" parent="mirror" unique_id=974036244 groups=["Interactables"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.851268, 1.9977806, 3.6061573)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.009783, 1.9977806, 3.6061573)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="mirror/testbody" unique_id=843336616]
 transform = Transform3D(0.32286763, 0, 0, 0, 0.64208627, 0, 0, 0, 0.64208627, -0.079562664, -0.025069833, 0)
+visible = false
 mesh = SubResource("SphereMesh_rfp5g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mirror/testbody" unique_id=1666123090]
@@ -136,11 +150,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048498392, 0, 0)
 shape = SubResource("SphereShape3D_fep6r")
 
 [node name="InteractableArea3D" parent="mirror/testbody" unique_id=563925380 instance=ExtResource("3_rfp5g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59303236, -0.7613945, -0.056808233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14705658, -0.7613945, -0.056808233)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mirror/testbody/InteractableArea3D" unique_id=1447041756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3199439, 0.9927367, -0.019042969)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00671196, 0.9927366, -0.019042969)
 shape = SubResource("BoxShape3D_rfp5g")
+
+[node name="Fundal" parent="mirror/testbody" unique_id=1936767386 instance=ExtResource("6_nq88r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038677216, 0.73453784, 0.13780904)
+
+[node name="Illusion" parent="." unique_id=1825233445 instance=ExtResource("6_5k5vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0560987, 0.666275, -3.7925568)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Illusion" unique_id=707953608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48167443, -0.48643363, -1.2992096)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Illusion/StaticBody3D" unique_id=1396151652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1324904, 0)
+shape = SubResource("BoxShape3D_5k5vb")
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="mirror/testbody/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]

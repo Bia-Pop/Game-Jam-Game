@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://mrqt5s35qy47"]
+
+[ext_resource type="PackedScene" uid="uid://bwrxm37p2wxsn" path="res://3D assets/Fundal.glb" id="1_cqyr4"]
+
+[node name="Fundal" unique_id=1936767386 instance=ExtResource("1_cqyr4")]
+
+[node name="Mirror_001_ОкружностьБезье_002" parent="." index="0" unique_id=2011659250]
+transform = Transform3D(-0.010629255, 0.6119115, 1.2767526e-07, 0.005303538, 9.2253234e-05, -0.61198074, -0.6118884, -0.010628856, -0.005304341, 0, 0, 0)
