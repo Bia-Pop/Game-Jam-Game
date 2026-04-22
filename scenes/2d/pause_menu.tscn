@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://w0qvkfqi8jww" path="res://Scripts/UI scripts/pause_menu.gd" id="1_f7s5a"]
 [ext_resource type="Shader" uid="uid://lf8tvki7yosm" path="res://Shaders/new_shader.gdshader" id="2_gunp4"]
+[ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/2d/options_panel.tscn" id="3_gunp4"]
+[ext_resource type="AudioStream" uid="uid://cltsx4t2jckm6" path="res://Audio/_paper_flip_01.wav" id="4_d3nmb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3nmb"]
 shader = ExtResource("2_gunp4")
@@ -79,6 +81,13 @@ text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1667776456]
 libraries/ = SubResource("AnimationLibrary_fmuxe")
+
+[node name="OptionsPanel" parent="." unique_id=355889237 instance=ExtResource("3_gunp4")]
+layout_mode = 1
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="." unique_id=901482915]
+stream = ExtResource("4_d3nmb")
+bus = &"Sfx"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

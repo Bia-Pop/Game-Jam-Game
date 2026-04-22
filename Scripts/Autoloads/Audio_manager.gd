@@ -11,7 +11,7 @@ var sfx_volume : float = 1.0
 func _ready() -> void:
 	_master_bus = AudioServer.get_bus_index("Master")
 	_music_bus  = AudioServer.get_bus_index("Music")
-	_sfx_bus    = AudioServer.get_bus_index("SFX")
+	_sfx_bus    = AudioServer.get_bus_index("Sfx")
 
 
 func set_master_volume(value: float) -> void:
