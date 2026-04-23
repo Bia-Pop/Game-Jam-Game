@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cr1ewx8nhox8f"]
+
+[ext_resource type="Texture2D" uid="uid://1s05vlcqe8ml" path="res://icon.svg" id="1_m73au"]
+[ext_resource type="Script" uid="uid://b2r62jwmp0aej" path="res://Scripts/Puzzles/keyboard_key.gd" id="1_qxuob"]
+
+[node name="KeyboardKey" type="TextureButton" unique_id=1637735959]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_m73au")
+script = ExtResource("1_qxuob")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

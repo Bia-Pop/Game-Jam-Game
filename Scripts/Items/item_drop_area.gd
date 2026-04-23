@@ -2,7 +2,7 @@ class_name ItemDropArea
 
 extends Control
 
-const WORLD_ITEM_2D = preload("res://WorldItems2D/PuzzleObject.tscn")
+const WORLD_ITEM_2D = preload("res://PuzzleObjects/DraggablePuzzleObject.tscn")
 @export var required_item: ItemData
 var complete: bool = false
 signal area_complete
