@@ -39,7 +39,7 @@ func end_puzzle():
 	for painting in paintings:
 		painting.draggable = false
 		painting.try_snapping.disconnect(on_try_snapping)
-	print("Puzzle ENDED")
+	print("The Magician finished!")
 
 func on_try_snapping(painting_index: int):
 	for marker_index in range(markers.size()):
