@@ -253,5 +253,13 @@ text = "Just a different version of this one."
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="Button" type="Button" parent="CanvasLayer/Control" unique_id=261315579]
+layout_mode = 0
+offset_left = 1681.0
+offset_top = 922.0
+offset_right = 1844.0
+offset_bottom = 968.0
+text = "SKIP"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1608521877]
 libraries/ = SubResource("AnimationLibrary_0qykc")

@@ -7,10 +7,11 @@ extends CanvasLayer
 
 @onready var cutscene_node = $Cutscene 
 @onready var anim_player: AnimationPlayer = $Cutscene/CanvasLayer/AnimationPlayer
-
+@onready var skip_button = $Cutscene/CanvasLayer/Control/Button
 
 func _ready() -> void:
 	cutscene_node.hide()
+	skip_button.hide()
 	if FileAccess.file_exists("user://SaveFile.tres") == false:
 		continue_button.disabled = true
 	options_panel.visible = false
@@ -21,6 +22,8 @@ func _on_start_pressed() -> void:
 	PuzzleManager.reset_data()
 	$TextureRect.hide()       
 	cutscene_node.show()
+	skip_button.show()
+	skip_button.pressed.connect(_on_skip_pressed)
 	anim_player.play("intro")
 	await anim_player.animation_finished
 	SceneChanger.change_scene_to_path(start_scene_path)
@@ -36,3 +39,8 @@ func _on_continue_pressed() -> void:
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_skip_pressed() -> void:
+	anim_player.stop()
+	SceneChanger.change_scene_to_path(start_scene_path)
