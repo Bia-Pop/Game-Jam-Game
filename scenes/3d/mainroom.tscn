@@ -198,7 +198,7 @@ mesh = SubResource("SphereMesh_rfp5g")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048498392, 0, 0)
 shape = SubResource("SphereShape3D_fep6r")
 
-[node name="Fundal" parent="actual_mirror" unique_id=1936767386 instance=ExtResource("6_nq88r")]
+[node name="Oglinda" parent="actual_mirror" unique_id=1936767386 instance=ExtResource("6_nq88r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038677216, 0.73453784, 0.13780904)
 
 [node name="InteractableArea3D" parent="actual_mirror" unique_id=563925380 instance=ExtResource("3_rfp5g")]
@@ -208,7 +208,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14705658, -0.7613945, -0.05
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00671196, 0.9927366, -0.019042969)
 shape = SubResource("BoxShape3D_rfp5g")
 
-[node name="Illusion" parent="." unique_id=982108487 instance=ExtResource("6_5k5vb")]
+[node name="Illusion" parent="." unique_id=1617867238 instance=ExtResource("6_5k5vb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0552967, 0.67229176, -3.7929158)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Illusion" unique_id=707953608]
@@ -275,13 +275,6 @@ shape = SubResource("BoxShape3D_3epcx")
 
 [node name="Moon3D" type="Node" parent="Puzzles3D" unique_id=1186423598]
 script = ExtResource("10_2vkj2")
-
-[node name="MoonShape" type="Node3D" parent="Puzzles3D/Moon3D" unique_id=336282562 node_paths=PackedStringArray("area", "object")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5652399, 2.927988, 4.489984)
-script = ExtResource("4_fep6r")
-area = NodePath("../StaticBody3D/InteractableArea3D")
-object = NodePath("../StaticBody3D")
-metadata/_custom_type_script = "uid://3hq0fuvsjl70"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Puzzles3D/Moon3D" unique_id=818467150 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5652399, 2.927988, 4.489984)
@@ -352,5 +345,3 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.93420315, 0.8984399, 
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="actual_mirror/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]
-
-[editable path="Puzzles3D/Star3D/StaticBody3D/Zodiac_wheel"]
