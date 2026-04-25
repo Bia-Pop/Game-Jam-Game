@@ -26,6 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://bmw0bken33ymw" path="res://3D assets/Objects/yellowpot.tscn" id="19_1o1v0"]
 [ext_resource type="Texture2D" uid="uid://d2jk24xroqfyi" path="res://Sprites/runes/rune_3.jpg" id="19_10edp"]
 [ext_resource type="Texture2D" uid="uid://bhl774fxqn772" path="res://Sprites/runes/rune_2.jpg" id="20_sbgw4"]
+[ext_resource type="Script" uid="uid://s4iq5hfdsch5" path="res://Scripts/Items/item_data.gd" id="22_jk8y8"]
+[ext_resource type="Resource" uid="uid://fxf623ngowdt" path="res://Scripts/Items/GreenPot.tres" id="23_v6s45"]
+[ext_resource type="Resource" uid="uid://dhkl5spggl2ln" path="res://Scripts/Items/BluePot.tres" id="24_yxx7e"]
+[ext_resource type="Resource" uid="uid://yvnkv23qvu5v" path="res://Scripts/Items/YellowPot.tres" id="25_lr5v6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -115,6 +119,11 @@ size = Vector3(6.427246, 2.241455, 5.492218)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg578"]
 size = Vector3(10.301453, 1, 9.803528)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sbgw4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vg578"]
+roughness = 0.0
 
 [node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile", "zoom_camera")]
 script = ExtResource("1_j7t7n")
@@ -440,6 +449,7 @@ text = "EXIT
 
 [node name="Hierophant3D" type="Node" parent="Puzzles3D" unique_id=1521141426]
 script = ExtResource("14_3epcx")
+solution = Array[ExtResource("22_jk8y8")]([ExtResource("23_v6s45"), ExtResource("24_yxx7e"), ExtResource("25_lr5v6")])
 
 [node name="BluePot" type="Node3D" parent="Puzzles3D/Hierophant3D" unique_id=283924667]
 
@@ -533,6 +543,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43072128, 1.1427844, -1.59
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22927856, 0.39008045, -0.28346252)
 shape = SubResource("BoxShape3D_vg578")
 debug_color = Color(0, 0, 0, 1)
+
+[node name="Liquid" type="MeshInstance3D" parent="Puzzles3D/Hierophant3D/CookingPot" unique_id=630156086]
+transform = Transform3D(2.1, 0, 0, 0, 0.186, 0, 0, 0, 2.1, -0.20397452, 2.814292, -1.2596308)
+mesh = SubResource("CylinderMesh_sbgw4")
+surface_material_override/0 = SubResource("StandardMaterial3D_vg578")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Puzzles3D/Hierophant3D" unique_id=1860394526]
 
 [node name="Death3D" type="Node" parent="Puzzles3D" unique_id=414329513 node_paths=PackedStringArray("ouija_table")]
 script = ExtResource("15_3epcx")
