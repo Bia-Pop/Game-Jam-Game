@@ -98,6 +98,7 @@ func check_if_complete():
 	for dot in drawing_dots:
 		if dot.target_indexes.size() != 0:
 			return
+	
 	end_puzzle()
 	
 func end_puzzle():

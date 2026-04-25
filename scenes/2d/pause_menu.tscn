@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://fujp0m2jfpul"]
 
 [ext_resource type="Script" uid="uid://w0qvkfqi8jww" path="res://Scripts/UI scripts/pause_menu.gd" id="1_f7s5a"]
+[ext_resource type="Texture2D" uid="uid://cybhyxsxpfs7v" path="res://UI/Menus/scol.png" id="2_cosra"]
 [ext_resource type="Shader" uid="uid://lf8tvki7yosm" path="res://Shaders/new_shader.gdshader" id="2_gunp4"]
 [ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/2d/options_panel.tscn" id="3_gunp4"]
 [ext_resource type="AudioStream" uid="uid://cltsx4t2jckm6" path="res://Audio/_paper_flip_01.wav" id="4_d3nmb"]
@@ -8,6 +9,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3nmb"]
 shader = ExtResource("2_gunp4")
 shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cfqt"]
 
 [sub_resource type="Animation" id="Animation_cosra"]
 length = 0.001
@@ -26,6 +29,21 @@ _data = {
 process_mode = 3
 layer = 11
 script = ExtResource("1_f7s5a")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1184046592]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -353.5
+offset_right = 557.0
+offset_bottom = 354.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cosra")
+expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1432574191]
 material = SubResource("ShaderMaterial_d3nmb")
@@ -48,6 +66,7 @@ offset_right = 258.25
 offset_bottom = 216.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2cfqt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1165657734]
 layout_mode = 2

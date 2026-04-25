@@ -12,20 +12,37 @@
 [ext_resource type="PackedScene" uid="uid://ixxg5srbckg2" path="res://3D assets/luna.tscn" id="11_ntof2"]
 [ext_resource type="Script" uid="uid://c1srst7838qj0" path="res://Scripts/Puzzles3D/star_3d.gd" id="12_vl5l8"]
 [ext_resource type="Script" uid="uid://0htjwty3extj" path="res://Scripts/Puzzles3D/temperance_3d.gd" id="13_gnvy8"]
-[ext_resource type="PackedScene" uid="uid://j403tq8k44rm" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
+[ext_resource type="PackedScene" uid="uid://by17lu4nxjwgw" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
 [ext_resource type="Script" uid="uid://jr6oloa7llj7" path="res://Scripts/Puzzles3D/hierophant_3d.gd" id="14_3epcx"]
 [ext_resource type="PackedScene" uid="uid://22hbh3dme6n0" path="res://3D assets/scenes/chest scene/cypher_chest.tscn" id="14_yuerg"]
 [ext_resource type="Script" uid="uid://c5jcpns81oxq3" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
+
 [ext_resource type="PackedScene" uid="uid://cp02prp35y6o4" path="res://3D assets/Objects/ouija_board_planchette.tscn" id="15_gnvy8"]
 [ext_resource type="PackedScene" uid="uid://bsjcgc8gqe3tg" path="res://scenes/3d/zoom_camera.tscn" id="16_3wu1q"]
-[ext_resource type="PackedScene" uid="uid://bb05nxvtgq347" path="res://3D assets/Objects/bluepot.tscn" id="17_3wu1q"]
+
 [ext_resource type="PackedScene" uid="uid://drtrf8lmpshik" path="res://3D assets/scenes/scales/scales.tscn" id="17_83icm"]
-[ext_resource type="PackedScene" uid="uid://dhtaksq2mt8o1" path="res://3D assets/Objects/greenpot.tscn" id="18_4aj2b"]
-[ext_resource type="PackedScene" uid="uid://bmw0bken33ymw" path="res://3D assets/Objects/yellowpot.tscn" id="19_1o1v0"]
+
+
 [ext_resource type="PackedScene" uid="uid://dac0nstm4o4l5" path="res://3D assets/scenes/sacks/Allsacks.tscn" id="19_10edp"]
 [ext_resource type="PackedScene" uid="uid://cs34nwn2hm41q" path="res://3D assets/scenes/sacks/bigsack.tscn" id="20_2or8c"]
 [ext_resource type="PackedScene" uid="uid://dcfqtxdgsvsf4" path="res://3D assets/scenes/sacks/midsack.tscn" id="21_kit8x"]
 [ext_resource type="PackedScene" uid="uid://cj6exx8db3k3l" path="res://3D assets/scenes/sacks/smallsack.tscn" id="22_jk8y8"]
+[ext_resource type="PackedScene" uid="uid://b236em5apfa8c" path="res://3D assets/scenes/chest scene/cypher_only.tscn" id="15_ntof2"]
+
+
+[ext_resource type="PackedScene" path="res://3D assets/Objects/bluepot.tscn" id="17_3wu1q"]
+[ext_resource type="Texture2D" uid="uid://b1s1gig8fcge5" path="res://Sprites/runes/rune_0.jpg" id="17_736gg"]
+[ext_resource type="PackedScene" path="res://3D assets/Objects/greenpot.tscn" id="18_4aj2b"]
+[ext_resource type="Texture2D" uid="uid://upl2fg165wol" path="res://Sprites/runes/rune_1.jpg" id="18_83icm"]
+[ext_resource type="PackedScene" path="res://3D assets/Objects/yellowpot.tscn" id="19_1o1v0"]
+[ext_resource type="Texture2D" uid="uid://d2jk24xroqfyi" path="res://Sprites/runes/rune_3.jpg" id="19_10edp"]
+[ext_resource type="Texture2D" uid="uid://bhl774fxqn772" path="res://Sprites/runes/rune_2.jpg" id="20_sbgw4"]
+[ext_resource type="Script" uid="uid://s4iq5hfdsch5" path="res://Scripts/Items/item_data.gd" id="22_jk8y8"]
+[ext_resource type="Resource" uid="uid://fxf623ngowdt" path="res://Scripts/Items/GreenPot.tres" id="23_v6s45"]
+[ext_resource type="Resource" uid="uid://dhkl5spggl2ln" path="res://Scripts/Items/BluePot.tres" id="24_yxx7e"]
+[ext_resource type="Resource" uid="uid://yvnkv23qvu5v" path="res://Scripts/Items/YellowPot.tres" id="25_lr5v6"]
+[ext_resource type="AudioStream" uid="uid://dtos2mplvjkri" path="res://Audio/zodiac_pressedt.wav" id="31_v6s45"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="32_yxx7e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -126,6 +143,11 @@ size = Vector3(6.427246, 2.241455, 5.492218)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg578"]
 size = Vector3(10.301453, 1, 9.803528)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sbgw4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vg578"]
+roughness = 0.0
 
 [node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile", "zoom_camera")]
 script = ExtResource("1_j7t7n")
@@ -462,6 +484,7 @@ visible = false
 
 [node name="Hierophant3D" type="Node" parent="Puzzles3D" unique_id=1521141426]
 script = ExtResource("14_3epcx")
+solution = Array[ExtResource("22_jk8y8")]([ExtResource("23_v6s45"), ExtResource("24_yxx7e"), ExtResource("25_lr5v6")])
 
 [node name="BluePot" type="Node3D" parent="Puzzles3D/Hierophant3D" unique_id=283924667]
 
@@ -556,12 +579,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22927856, 0.39008045, -0.28
 shape = SubResource("BoxShape3D_vg578")
 debug_color = Color(0, 0, 0, 1)
 
+[node name="Liquid" type="MeshInstance3D" parent="Puzzles3D/Hierophant3D/CookingPot" unique_id=630156086]
+transform = Transform3D(2.1, 0, 0, 0, 0.186, 0, 0, 0, 2.1, -0.20397452, 2.814292, -1.2596308)
+mesh = SubResource("CylinderMesh_sbgw4")
+surface_material_override/0 = SubResource("StandardMaterial3D_vg578")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Puzzles3D/Hierophant3D" unique_id=1860394526]
+
 [node name="Death3D" type="Node" parent="Puzzles3D" unique_id=414329513 node_paths=PackedStringArray("ouija_table")]
 script = ExtResource("15_3epcx")
 ouija_table = NodePath("Ouija_board_planchette")
 
 [node name="Ouija_board_planchette" parent="Puzzles3D/Death3D" unique_id=841430910 instance=ExtResource("15_gnvy8")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.93420315, 0.5774975, -3.8194716)
+
+[node name="SfxPlayer" type="AudioStreamPlayer3D" parent="." unique_id=31134926]
+stream = ExtResource("31_v6s45")
+bus = &"Sfx"
+
+[node name="SfxPlayer2" type="AudioStreamPlayer3D" parent="." unique_id=313866492]
+stream = ExtResource("32_yxx7e")
+bus = &"Sfx"
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="actual_mirror/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]

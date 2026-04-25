@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_acc0d")
-item_name = "YellowSack"
+item_name = "YellowPot"
 icon = ExtResource("1_n6dd4")
 metadata/_custom_type_script = "uid://s4iq5hfdsch5"

@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bhm5xkhsb3n7c"]
 
 [ext_resource type="Script" uid="uid://jkdtdrbltqbh" path="res://scenes/2d/options_panel.gd" id="1_ri7eq"]
+[ext_resource type="Texture2D" uid="uid://cybhyxsxpfs7v" path="res://UI/Menus/scol.png" id="2_j8pfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn7tq"]
 
 [node name="OptionsPanel" type="Control" unique_id=355889237]
 layout_mode = 3
@@ -10,12 +13,28 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -705.0
-offset_top = -391.0
+offset_top = -80.0
 offset_right = 734.0
 offset_bottom = 401.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ri7eq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1496992819]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1445.5
+offset_top = -494.5
+offset_right = 1647.5
+offset_bottom = 231.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j8pfr")
+expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1355058121]
 layout_mode = 1
@@ -24,24 +43,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dn7tq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=968287351]
 layout_mode = 2
 theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
+theme_override_constants/margin_top = -76
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1079661118]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=511051781]
 layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="OptionsLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1581103406]
 layout_mode = 2
-theme_override_font_sizes/font_size = 74
+theme_override_colors/font_color = Color(0.3883395, 0.34306705, 0.28647655, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
 text = "Options"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Resolutions" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1742658819]
 layout_mode = 2
@@ -56,6 +77,9 @@ popup/item_2/id = 2
 
 [node name="MasterLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=735976144]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.39607844, 0.34901962, 0.2784314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
 text = "Master"
 
 [node name="MasterSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1774791440]
@@ -68,6 +92,9 @@ value = 1.0
 
 [node name="MusicLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1920110103]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.39215687, 0.34901962, 0.2784314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
 text = "Music"
 
 [node name="MusicSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1434403892]
@@ -78,6 +105,9 @@ value = 1.0
 
 [node name="SfxLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1685028026]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.39215687, 0.34901962, 0.2784314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
 text = "Sfx"
 
 [node name="SfxSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2037572812]
@@ -88,6 +118,7 @@ value = 1.0
 
 [node name="Close" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1161007039]
 layout_mode = 2
+size_flags_horizontal = 12
 text = "Close
 "
 
