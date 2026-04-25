@@ -7,6 +7,14 @@ extends Node
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var liquid: MeshInstance3D = $CookingPot/Liquid
 
+#for animation
+@export var blue_pot_anim : Node3D
+@export var yellow_pot_anim : Node3D
+@export var green_pot_anim : Node3D
+
+@export var anim_player : AnimationPlayer 
+@export var anim_start_loc : Marker3D
+
 var already_interacting: bool = false
 
 @export var solution: Array[ItemData]
@@ -78,20 +86,29 @@ func update_cooking_pot():
 	cooking_static_body_3d.interact = Callable(self, "_on_cooking_interaction")
 
 func _on_cooking_interaction():
+	if already_interacting: return
 	match InventoryManager.selected_item.item_name:
 		"BluePot":
 			already_interacting = true
-			_on_blue_pot_anim_finished()
+			blue_pot_anim.visible = true
+			anim_player.play("blue_spill")
+			
 		"GreenPot":
+			green_pot_anim.visible = true
 			already_interacting = true
-			_on_green_pot_anim_finished()
+			
+			anim_player.play("green_spill")
+			
+
 		"YellowPot":
+			yellow_pot_anim.visible = true
 			already_interacting = true
-			_on_yellow_pot_anim_finished()
+			anim_player.play("yellow_spill")
 		_:
 			print("Wrong item")
 	
 func _on_blue_pot_anim_finished():
+	blue_pot_anim.visible = false
 	change_liquid_color(Color.AQUA)
 	await get_tree().create_timer(0.5).timeout
 	if solution[correct_steps_streak].item_name != "BluePot":
@@ -103,6 +120,7 @@ func _on_blue_pot_anim_finished():
 	already_interacting = false
 	
 func _on_green_pot_anim_finished():
+	green_pot_anim.visible = false
 	change_liquid_color(Color.WEB_GREEN)
 	await get_tree().create_timer(0.5).timeout
 	if solution[correct_steps_streak].item_name != "GreenPot":
@@ -114,6 +132,7 @@ func _on_green_pot_anim_finished():
 	already_interacting = false
 	
 func _on_yellow_pot_anim_finished():
+	yellow_pot_anim.visible = false
 	change_liquid_color(Color.YELLOW)
 	await get_tree().create_timer(0.5).timeout
 	if solution[correct_steps_streak].item_name != "YellowPot":
