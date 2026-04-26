@@ -32,7 +32,9 @@ func _on_mirror_switch():
 	SceneChanger.change_scene_to_path.call_deferred(scene_2D_path)
 
 func _on_player_clicked(target) -> void:
-	if target.area.can_interact:
+	if not target.area:
+		target.interact.call()
+	elif target.area.can_interact:
 		print("target is in area!")
 		target.interact.call()
 

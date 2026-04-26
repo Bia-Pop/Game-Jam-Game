@@ -126,7 +126,7 @@ size = Vector3(1.0844727, 1.7418976, 2.3536377)
 size = Vector3(5.9093018, 5.895996, 4.697693)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1o1v0"]
-size = Vector3(1.7891235, 3.2866821, 1.564209)
+size = Vector3(1.2212219, 3.2866821, 1.564209)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_736gg"]
 size = Vector3(6.427246, 2.241455, 5.492218)
@@ -464,9 +464,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23758125, 1.6315613, -0.001
 shape = SubResource("BoxShape3D_rfp5g")
 debug_color = Color(7.4990616, 6.40278, 0, 1)
 
-[node name="Illusion" parent="." unique_id=1874785248 instance=ExtResource("6_5k5vb")]
+[node name="Illusion" parent="." unique_id=238703043 instance=ExtResource("6_5k5vb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0552967, 0.67229176, -3.7929158)
-visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Illusion" unique_id=707953608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48167443, -0.48643363, -1.2992096)
@@ -714,7 +713,7 @@ shape = SubResource("BoxShape3D_83icm")
 debug_color = Color(1, 0.6, 1, 1)
 
 [node name="RightBig" type="Marker3D" parent="Puzzles3D/Temperance3D" unique_id=663865956]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.969223, 4.050131, 7.3130236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.05027, 4.0375786, 7.351064)
 
 [node name="Left Big" type="Marker3D" parent="Puzzles3D/Temperance3D" unique_id=591525084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.929723, 4.067628, 5.516588)
@@ -776,16 +775,16 @@ debug_color = Color(0, 0.44313726, 0.5176471, 1)
 [node name="GreenPot" type="Node3D" parent="Puzzles3D/Hierophant3D" unique_id=978890430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1149096, -0.06547761, 2.53463)
 
-[node name="GreenStaticBody3D" type="StaticBody3D" parent="Puzzles3D/Hierophant3D/GreenPot" unique_id=1476279752 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
+[node name="GreenStaticBody3D" type="StaticBody3D" parent="Puzzles3D/Hierophant3D/GreenPot" unique_id=1476279752 node_paths=PackedStringArray("object") groups=["Interactables"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61283, 1.3226688, -7.9926257)
 script = ExtResource("4_fep6r")
-area = NodePath("../../BluePot/BlueInteractableArea3D")
 object = NodePath(".")
 
 [node name="greenpot" parent="Puzzles3D/Hierophant3D/GreenPot/GreenStaticBody3D" unique_id=1222744295 instance=ExtResource("18_4aj2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48550034, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/GreenPot/GreenStaticBody3D" unique_id=927261563]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19247437, 1.1433411, 0.2821045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09748936, 1.1433411, 0.2821045)
 shape = SubResource("BoxShape3D_1o1v0")
 debug_color = Color(0, 0.5372549, 0.627451, 1)
 
@@ -803,7 +802,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3198571, -0.071055174, 4.1
 [node name="YellowStaticBody3D" type="StaticBody3D" parent="Puzzles3D/Hierophant3D/YellowPot" unique_id=721327788 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61283, 1.3226688, -7.9926257)
 script = ExtResource("4_fep6r")
-area = NodePath("../../BluePot/BlueInteractableArea3D")
+area = NodePath("../YellowInteractableArea3D3")
 object = NodePath(".")
 
 [node name="yellowpot" parent="Puzzles3D/Hierophant3D/YellowPot/YellowStaticBody3D" unique_id=132788889 instance=ExtResource("19_1o1v0")]
@@ -817,7 +816,7 @@ debug_color = Color(0, 0.5372549, 0.627451, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3266296, 1.6882858, -7.5607142)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/YellowPot/YellowInteractableArea3D3" unique_id=1492353245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.010498, 0.4979248, 2.246109)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.010498, 0.4979248, -0.12475419)
 shape = SubResource("BoxShape3D_736gg")
 debug_color = Color(0, 0.44313726, 0.5176471, 1)
 
