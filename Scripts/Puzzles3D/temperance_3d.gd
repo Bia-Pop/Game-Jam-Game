@@ -42,11 +42,14 @@ var left_weight : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if sack_picked_up: allsack.queue_free()
+	if PuzzleManager.all_sacks_picked_up: allsack.queue_free()
 	
-	if !PuzzleManager.temperance_solved:
+	if !PuzzleManager.complete_puzzles[PuzzleManager.puzzles.TEMPERANCE]:
 		left_scale.interact = Callable(self, "_on_lefts_interact")
 		right_scale.interact = Callable(self, "_on_rights_interact")
+	else:
+		left_scale.remove_from_group("Interactables")
+		right_scale.remove_from_group("Interactables")
 	
 	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.TEMPERANCE] == false:
 		cypher_chest.interact = Callable(self, "_on_chest_clicked")
@@ -91,7 +94,9 @@ func _on_zoom_camera_cypher_cracked() -> void:
 
 #region SACKS AND SCALES
 func _on_all_pickup():
-	sack_picked_up = true
+	PuzzleManager.all_sacks_picked_up = true
+	SaveManager.save_file_data.all_sacks_picked_up = true
+	
 	print("all picked up!")
 	InventoryManager.add_item(InventoryManager.BIG_SACK)
 	InventoryManager.add_item(InventoryManager.MEDIUM_SACK)
@@ -153,6 +158,7 @@ func which_sack(sack):
 		if is_right:
 			has_right_med_sack = true
 			right_weight += 2
+			
 			med_sack.global_position = right_big_marker.global_position
 			is_right = false
 		
@@ -173,8 +179,8 @@ func _on_rights_interact():
 	print("comparing right")
 	
 	if has_right_big_sack:
-		if left_weight >= 0:
-			left_weight -= 3
+		if right_weight >= 0:
+			right_weight -= 3
 		InventoryManager.add_item(InventoryManager.BIG_SACK)
 		has_right_big_sack = false
 		big_sack.visible = false
@@ -202,7 +208,7 @@ func _on_rights_interact():
 
 
 func compare():
-	print(left_weight, right_weight)
+	print(left_weight, " ", right_weight)
 	if right_weight == left_weight:
 			print("Temperance completed!")
 			left_scale.remove_from_group("Interactables")

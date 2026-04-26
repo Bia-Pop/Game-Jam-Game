@@ -19,3 +19,5 @@ extends Resource
 @export var small_sack_picked_up: bool = false
 @export var medium_sack_picked_up: bool = false
 @export var big_sack_picked_up: bool = false
+
+@export var all_sacks_picked_up: bool = false

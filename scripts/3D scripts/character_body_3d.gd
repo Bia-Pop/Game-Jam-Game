@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	
 	if !is_inside_tree(): return
 	
+	seetext.hide()
 	if is_instance_valid(seecast) and seecast.is_colliding():
 		var target = seecast.get_collider()
 		#print(target)
@@ -46,7 +47,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("interact"):
 				clicked.emit(target)
 				print("DO STUFF!")
-		else: seetext.hide()
+		#else: seetext.hide()
 	
 	
 	if not is_on_floor():

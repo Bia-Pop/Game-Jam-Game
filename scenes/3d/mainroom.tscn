@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://22hbh3dme6n0" path="res://3D assets/scenes/chest scene/cypher_chest.tscn" id="14_yuerg"]
 [ext_resource type="Script" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
 [ext_resource type="PackedScene" uid="uid://cp02prp35y6o4" path="res://3D assets/Objects/ouija_board_planchette.tscn" id="15_gnvy8"]
-[ext_resource type="PackedScene" path="res://scenes/3d/zoom_camera.tscn" id="16_3wu1q"]
+[ext_resource type="PackedScene" uid="uid://bm2sct1i5mld5" path="res://scenes/3d/zoom_camera.tscn" id="16_3wu1q"]
 [ext_resource type="PackedScene" uid="uid://dac0nstm4o4l5" path="res://3D assets/scenes/sacks/Allsacks.tscn" id="16_yxx7e"]
 [ext_resource type="PackedScene" uid="uid://bb05nxvtgq347" path="res://3D assets/Objects/bluepot.tscn" id="17_3wu1q"]
 [ext_resource type="PackedScene" uid="uid://drtrf8lmpshik" path="res://3D assets/scenes/scales/scales.tscn" id="17_83icm"]

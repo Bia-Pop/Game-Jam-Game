@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bsjcgc8gqe3tg"]
+[gd_scene format=3 uid="uid://bm2sct1i5mld5"]
 
-[ext_resource type="Script" uid="uid://cr1ppvqh8alvm" path="res://scenes/3d/zoom_camera.gd" id="1_8wvtw"]
+[ext_resource type="Script" path="res://scenes/3d/zoom_camera.gd" id="1_8wvtw"]
 [ext_resource type="Texture2D" uid="uid://b1s1gig8fcge5" path="res://Sprites/runes/rune_0.jpg" id="2_cdv7l"]
 [ext_resource type="Texture2D" uid="uid://upl2fg165wol" path="res://Sprites/runes/rune_1.jpg" id="3_ygdcu"]
 [ext_resource type="Texture2D" uid="uid://bhl774fxqn772" path="res://Sprites/runes/rune_2.jpg" id="4_svo3w"]
@@ -17,31 +17,59 @@ sol_arr = Array[int]([0, 1, 2, 3])
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1383525204]
 
 [node name="Button" type="TextureButton" parent="CanvasLayer" unique_id=1959588937]
-offset_left = 400.0
-offset_top = 470.0
-offset_right = 461.0
-offset_bottom = 497.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = 213.5
+offset_right = -119.0
+offset_bottom = 378.5
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("2_cdv7l")
 
 [node name="Button2" type="TextureButton" parent="CanvasLayer" unique_id=1629335532]
-offset_left = 541.0
-offset_top = 465.0
-offset_right = 607.0
-offset_bottom = 492.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = 213.5
+offset_right = 41.0
+offset_bottom = 378.5
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("2_cdv7l")
 
 [node name="Button3" type="TextureButton" parent="CanvasLayer" unique_id=47177555]
-offset_left = 676.0
-offset_top = 467.0
-offset_right = 742.0
-offset_bottom = 494.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = 213.5
+offset_right = 201.0
+offset_bottom = 378.5
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("2_cdv7l")
 
 [node name="Button4" type="TextureButton" parent="CanvasLayer" unique_id=415488530]
-offset_left = 817.0
-offset_top = 462.0
-offset_right = 882.0
-offset_bottom = 489.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = 213.5
+offset_right = 361.0
+offset_bottom = 378.5
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("2_cdv7l")
 
 [node name="Exit" type="Button" parent="CanvasLayer" unique_id=836941342]

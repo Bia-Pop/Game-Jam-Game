@@ -30,7 +30,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("interact") and is_drawing and InventoryManager.selected_item.item_name == "Pencil":
+	if Input.is_action_pressed("interact") and is_drawing:
 		if currently_drawn_line != null:
 			currently_drawn_line.set_point_position(1, get_global_mouse_position())
 

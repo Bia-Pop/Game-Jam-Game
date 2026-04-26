@@ -24,6 +24,8 @@ var small_sack_picked_up: bool = false
 var medium_sack_picked_up: bool = false
 var big_sack_picked_up: bool = false
 
+var all_sacks_picked_up: bool = false
+
 var death_solved : bool = false
 
 const number_of_puzzles: int = 7
@@ -63,6 +65,8 @@ func reset_data():
 	medium_sack_picked_up = false
 	big_sack_picked_up = false
 	
+	all_sacks_picked_up = false
+	
 	complete_puzzles = []
 	complete_puzzles.resize(number_of_puzzles)
 	complete_puzzles.fill(false)
@@ -80,6 +84,8 @@ func load_data():
 	small_sack_picked_up = SaveManager.save_file_data.small_sack_picked_up
 	medium_sack_picked_up = SaveManager.save_file_data.medium_sack_picked_up
 	big_sack_picked_up = SaveManager.save_file_data.big_sack_picked_up
+	
+	all_sacks_picked_up = SaveManager.save_file_data.all_sacks_picked_up
 	
 	complete_puzzles = SaveManager.save_file_data.complete_puzzles
 	completed_puzzles = 0
